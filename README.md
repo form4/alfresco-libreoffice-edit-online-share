@@ -1,24 +1,33 @@
-Alfresco Share module to add "Edit in LibreOffice" button
-=========================================================
+# Alfresco Share JAR Module - SDK 3
 
-This module adds an "Edit in LibreOffice" button to documents in Alfresco Share to allow users to edit Alfresco documents in LibreOffice.
+To run this module use `mvn clean install -DskipTests=true alfresco:run` or `./run.sh` and verify that it 
 
-The button depends on the "vnd.libreoffice.cmis://" protocol being handled by the browser/OS to launch LibreOffice.
-This means that some configuration of the OS is necessary for this to work.
+ * Runs the embedded Tomcat + H2 DB 
+ * Runs Alfresco Share
+ * Packages both as JAR and AMP assembly
 
-On Windows, this works in Internet Explorer and Firefox when the following registry file is installed (for LibreOffice 5):
-`libreoffice5.reg`.
+Note. You access Share as follows: http://localhost:8081/share
+ 
+Note. You need an Alfresco Platform instance running at http://localhost:8080/alfresco that Share can talk to.
+      Typically you will just kick off a platform-jar module for that.
+ 
+# Few things to notice
 
-Note that if LibreOffice 4 is used or LibreOffice is installed to a different location, simply change the path in the .reg file.
-
-Configuration has not been provided/tested for Mac OS X/Linux, but it should be possible to get it to work there.
-
-TODO:
- * It currently adds the button for all mime-types.
- * The action title is not translatable.
- * Detect whether browser supports protocol (using https://github.com/ismailhabib/custom-protocol-detection ?)
-
-Installation
-------------
-
-Build an AMP file using `mvn package` and copy it from the `target` directory to your Alfresco installation's `amps_share` directory and run `/opt/alfresco/bin/apply_amps.sh`.
+ * No parent pom
+ * WAR assembly is handled by the Alfresco Maven Plugin configuration, if needed
+ * Standard JAR packaging and layout
+ * Works seamlessly with Eclipse and IntelliJ IDEA
+ * JRebel for hot reloading, JRebel maven plugin for generating rebel.xml, agent usage: `MAVEN_OPTS=-Xms256m -Xmx1G -agentpath:/home/martin/apps/jrebel/lib/libjrebel64.so`
+ * AMP as an assembly
+ * [Configurable Run mojo](https://github.com/Alfresco/alfresco-sdk/blob/sdk-3.0/plugins/alfresco-maven-plugin/src/main/java/org/alfresco/maven/plugin/RunMojo.java) in the `alfresco-maven-plugin`
+ * No unit testing/functional tests just yet
+ * Resources loaded from META-INF
+ * Web Fragment (this includes a sample servlet configured via web fragment)
+ 
+# TODO
+ 
+  * Abstract assembly into a dependency so we don't have to ship the assembly in the archetype
+ 
+   
+  
+ 
