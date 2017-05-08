@@ -1,1 +1,5 @@
 /target/
+/share.log
+/.classpath
+/.project
+/.settings/
