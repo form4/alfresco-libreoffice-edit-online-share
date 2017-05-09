@@ -9,4 +9,4 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\libreoffice\shell\open]
 
 [HKEY_CLASSES_ROOT\libreoffice\shell\open\command]
-@="\"C:\\Program Files\\LibreOffice 5\\program\\protocolhandler.bat\" %1"
+@="\"C:\\Program Files (x86)\\LibreOffice 5\\program\\protocolhandler.bat\" %1"

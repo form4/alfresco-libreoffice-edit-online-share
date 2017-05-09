@@ -29,5 +29,11 @@ Note. You need an Alfresco Platform instance running at http://localhost:8080/al
   * Abstract assembly into a dependency so we don't have to ship the assembly in the archetype
  
    
-  
+# Windows
+
+* check Libre Office path in ``protocolhandler.bat`` and ``libreoffice5.reg`` 
+* copy ``protocolhandler.bat`` to ``$LibreOfficeHome/programs`` (needs Admin Rights)
+* add RegLib entry via ``libreoffice5.reg`` (needs Admin Rights)
  
+# Ubuntu
+tbd. 
