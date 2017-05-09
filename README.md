@@ -18,16 +18,27 @@ TODO:
  * The action title is not translatable.
  * Detect whether browser supports protocol (using https://github.com/ismailhabib/custom-protocol-detection ?)
 
+Prerequisites
+------------
+
+Installed Alfresco Office Services. You can test it by https://yourdomain.com/alfresco/aos or by Windows Explorer \\yourdomain.com@SSL\alfresco\aos.
+
 Installation
 ------------
 
 Build an AMP file using `mvn clean package` and copy it from the `target` directory to your Alfresco installation's `amps_share` directory and run `/opt/alfresco/bin/apply_amps.sh`.
 
-# Windows
+## Windows
 
 * check Libre Office path in ``protocolhandler.bat`` and ``libreoffice5.reg`` 
 * copy ``protocolhandler.bat`` to ``$LibreOfficeHome/programs`` (needs Admin Rights)
 * add RegLib entry via ``libreoffice5.reg`` (needs Admin Rights)
  
-# Ubuntu
+## Ubuntu
 tbd. 
+
+
+Development
+------------
+
+Hint: It does not work if you run on localhost.
